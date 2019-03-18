@@ -1,1 +1,4 @@
 /* pages/mp3/mp3.wxss */
+audio{
+  width: 100%;
+}
