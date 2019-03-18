@@ -15,6 +15,11 @@ Page({
       url: '../logs/logs'
     })
   },
+  bindViewMp3:function(){
+    wx.navigateTo({
+      url: '../mp3/mp3',
+    })
+  },
   onLoad: function () {
     if (app.globalData.userInfo) {
       this.setData({
