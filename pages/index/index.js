@@ -20,6 +20,11 @@ Page({
       url: '../mp3/mp3',
     })
   },
+  bindViewMp4:function(){
+    wx.navigateTo({
+      url: '../mp4/mp4',
+    })
+  },
   onLoad: function () {
     if (app.globalData.userInfo) {
       this.setData({

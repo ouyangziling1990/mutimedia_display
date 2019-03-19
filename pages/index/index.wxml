@@ -9,6 +9,7 @@
   </view>
   <view class="usermotto">
     <button bindtap="bindViewMp3" class='part-button'>mp3</button>
+    <button bindtap="bindViewMp4" class='part-button'>mp4</button>
     <text class="user-motto">{{motto}}</text>
   </view>
 </view>
