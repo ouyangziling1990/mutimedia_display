@@ -1,2 +1,4 @@
 <!--pages/mp4/mp4.wxml-->
-<text>pages/mp4/mp4.wxml</text>
+<view>
+<video id='newwork_video' src="{{src}}"></video>
+</view>

@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    // src:"http://www.w3school.com.cn//i/movie.mp4"
   },
 
   /**
@@ -19,9 +19,12 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    this.videoContext = wx.createVideoContext('newwork_video')
+    this.setData({
+      src:'http://www.w3school.com.cn//i/movie.mp4'
+    })
   },
-
+  
   /**
    * 生命周期函数--监听页面显示
    */

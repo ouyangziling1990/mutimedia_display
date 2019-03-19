@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/mp3/mp3",
-    "pages/mp4/mp4"
+    "pages/mp4/mp4",
+    "pages/word/word"
   ],
   "window": {
     "backgroundTextStyle": "light",

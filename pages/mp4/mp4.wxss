@@ -1,1 +1,5 @@
 /* pages/mp4/mp4.wxss */
+#newwork_video{
+  width: 100%;
+  height: 400px;
+}

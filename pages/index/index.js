@@ -25,6 +25,11 @@ Page({
       url: '../mp4/mp4',
     })
   },
+  bindViewWord:function(){
+    wx.navigateTo({
+      url: '../word/word',
+    })
+  },
   onLoad: function () {
     if (app.globalData.userInfo) {
       this.setData({

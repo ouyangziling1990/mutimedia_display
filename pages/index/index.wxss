@@ -17,8 +17,12 @@
 }
 
 .usermotto {
-  margin-top: 200px;
+  margin-top: 20px;
 }
 .part-button{
   background:#aaa;
+}
+button{
+  display: inline-block;
+  margin:10px;
 }
