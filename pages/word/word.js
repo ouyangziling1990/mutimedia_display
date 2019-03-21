@@ -10,7 +10,8 @@ Page({
   bindButtonTap:function(){
     var that = this
     wx.downloadFile({
-      url: "http://bkzs.hfut.edu.cn/upload/xxnr/1424999023411.doc",
+      // url: "http://bkzs.hfut.edu.cn/upload/xxnr/1424999023411.doc",
+      url: "http://192.168.2.16:8899/document-output.pdf",
       success:function(res){
         console.log("download file")
         console.log(res)
