@@ -1,28 +1,37 @@
 // pages/word.js
+var app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    url:"",
+    serverpath:""
   },
-  bindButtonTap:function(){
+  bindButtonWord:function(){
     var that = this
+    console.log("下载word程序")
     wx.downloadFile({
       // url: "http://bkzs.hfut.edu.cn/upload/xxnr/1424999023411.doc",
-      url: "http://192.168.2.16:8899/document-output.pdf",
+      url: that.data.url + "wujingwei_resume.docx",
       success:function(res){
-        console.log("download file")
-        console.log(res)
+        
         var filePath = res.tempFilePath;
         wx.openDocument({
           filePath: filePath,
           success(res) {
-            // tempFilePath可以作为img标签的src属性显示图片
+            console.log("word下载成功")
             const tempFilePaths = res.tempFilePaths
           }
         })
+      },
+      fail:function(res){
+        console.log("文件下载失败")
+      },
+      complete:function(res){
+        console.log("调用结束")
+        console.log(that.url)
       }
     })
     
@@ -30,7 +39,7 @@ Page({
   bindButtonExcel: function () {
     var that = this
     wx.downloadFile({
-      url: "http://bkzs.hfut.edu.cn/upload/xxnr/1424999023411.doc",
+      url: that.data.url + "work_.xlsx",
       success: function (res) {
         console.log("download file")
         console.log(res)
@@ -48,28 +57,41 @@ Page({
   },
   bindButtonpdf: function () {
     var that = this
-    wx.downloadFile({
-      url: "http://www.ycps.tp.edu.tw/mediafile/1934/news/154/2013-12/2013-12-19-9-55-10-nf1.pdf",
-      success: function (res) {
-        console.log("download file")
+    wx.request({
+      url:that.data.serverpath,
+      success(res){
         console.log(res)
-        var filePath = res.tempFilePath;
-        wx.openDocument({
-          filePath: filePath,
-          success(res) {
-            // tempFilePath可以作为img标签的src属性显示图片
-            const tempFilePaths = res.tempFilePaths
+        var file_path1 = res.data.path
+        console.log("filename" + file_path1)
+        wx.downloadFile({
+          url: that.data.url + file_path1,
+          success: function (res) {
+            var filePath = res.tempFilePath;
+            wx.openDocument({
+              filePath: filePath,
+              success(res) {
+                // tempFilePath可以作为img标签的src属性显示图片
+                const tempFilePaths = res.tempFilePaths
+              }
+            })
           }
         })
       }
     })
+    
 
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var urlinfo = app.globalData.tmpUrl
+    this.setData({
+      url:urlinfo,
+      serverpath: app.globalData.serverpath
+    })
+    console.log(urlinfo)
+    console.log(this.data.url)
   },
 
   /**

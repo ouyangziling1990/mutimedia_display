@@ -1,5 +1,5 @@
 <!--pages/word.wxml-->
 <!-- <text>pages/word.wxml</text> -->
-<button bindtap="bindButtonTap">预览word</button>
+<button bindtap="bindButtonWord">预览word</button>
 <button bindtap="bindButtonExcel">预览excel</button>
 <button bindtap="bindButtonpdf">预览pdf</button>

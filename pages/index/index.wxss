@@ -26,3 +26,9 @@ button{
   display: inline-block;
   margin:10px;
 }
+.container{
+  padding-top:50rpx;
+}
+#title{
+  font-size: 50rpx;
+}

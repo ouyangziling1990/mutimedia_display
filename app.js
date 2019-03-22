@@ -34,6 +34,8 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    tmpUrl:"http://192.168.2.16:8899/",
+    serverpath: "http://localhost:8888/"
   }
 })

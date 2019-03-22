@@ -1,4 +1,4 @@
-/* pages/mp3/mp3.wxss */
-audio{
-  width: 100%;
+button{
+  display: inline-block;
+  margin: 0.5rem;
 }

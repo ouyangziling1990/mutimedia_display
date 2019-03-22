@@ -2,8 +2,10 @@ from reportlab.pdfgen import canvas
 from PyPDF2 import PdfFileWriter, PdfFileReader
 from reportlab.lib.units import cm
 
+watermarkPath = "./static/watermark.pdf"
+
 def waterMark(waterString, inputpath, outpath):
-    c = canvas.Canvas('watermark.pdf')
+    c = canvas.Canvas(watermarkPath)
     # c.drawString(15, 720,"ziling")
     c.translate(10*cm, 5*cm)
     #设置字体
@@ -26,7 +28,7 @@ def waterMark(waterString, inputpath, outpath):
     c.save()
 
     # Get the watermark file you just created
-    watermark = PdfFileReader(open("watermark.pdf", "rb"))
+    watermark = PdfFileReader(open(watermarkPath, "rb"))
 
     # Get our files ready
     output_file = PdfFileWriter()
@@ -48,11 +50,13 @@ def waterMark(waterString, inputpath, outpath):
     with open(outpath, "wb") as outputStream:
         output_file.write(outputStream)
 
+
+def main():
+    waterString = "wujingwei"
+    inputpath = "./static/wujingwei_resume.pdf" 
+    outpath = "./static/document-output.pdf"
+    waterMark(waterString, inputpath, outpath)
+
 if __name__ == "__main__":
     main()
 
-def main:
-    waterString = "ziling"
-    inputpath = "wujingwei_resume.pdf" 
-    outpath = "document-output.pdf"
-    waterMark(waterString, inputpath, outpath)
