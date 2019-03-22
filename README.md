@@ -7,9 +7,9 @@
 #### pdf格式加水印
 - 配置python后台
 
-python3.7.1
-pip install reportlab 
-pip install pypdf2
+python版本： python3.7.1
+- pip install reportlab 
+- pip install pypdf2
 
 #### webserver配置
 - 配置静态文件服务器  cd pdf_watermark/static python -m http.server 8899
