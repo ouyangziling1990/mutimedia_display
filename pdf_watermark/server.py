@@ -4,7 +4,7 @@ from waterMark import waterMark
 import os 
 
 data = {'path': ''}
-host = ('localhost', 8888)
+host = ('192.168.199.146', 8888)
 count = 0
 class Resquest(BaseHTTPRequestHandler):
     def do_GET(self):

@@ -57,6 +57,7 @@ Page({
   },
   bindButtonpdf: function () {
     var that = this
+    console.log("serverpath: " + that.data.serverpath)
     wx.request({
       url:that.data.serverpath,
       success(res){
