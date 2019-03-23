@@ -58,27 +58,28 @@ Page({
   bindButtonpdf: function () {
     var that = this
     console.log("serverpath: " + that.data.serverpath)
-    wx.request({
-      url:that.data.serverpath,
-      success(res){
-        console.log(res)
-        var file_path1 = res.data.path
-        console.log("filename" + file_path1)
-        wx.downloadFile({
-          url: that.data.url + file_path1,
-          success: function (res) {
-            var filePath = res.tempFilePath;
-            wx.openDocument({
-              filePath: filePath,
-              success(res) {
-                // tempFilePath可以作为img标签的src属性显示图片
-                const tempFilePaths = res.tempFilePaths
-              }
-            })
+    wx.downloadFile({
+      url: that.data.url + "document-output1.pdf",
+      success: function (res) {
+        var filePath = res.tempFilePath;
+        wx.openDocument({
+          filePath: filePath,
+          success(res) {
+            // tempFilePath可以作为img标签的src属性显示图片
+            const tempFilePaths = res.tempFilePaths
           }
         })
       }
     })
+    // wx.request({
+    //   url:that.data.serverpath,
+    //   success(res){
+    //     console.log(res)
+    //     var file_path1 = res.data.path
+    //     console.log("filename" + file_path1)
+       
+    //   }
+    // })
     
 
   },

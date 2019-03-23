@@ -35,7 +35,7 @@ App({
   },
   globalData: {
     userInfo: null,
-    tmpUrl:"http://192.168.199.146:8899/",
+    tmpUrl:"http://47.93.1.195:8899/",
     serverpath: "http://192.168.199.146:8888/"
   }
 })
